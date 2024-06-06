@@ -1,0 +1,128 @@
+:root{
+    font-size: 62.5%;
+    --color-primary: hsl(235, 35%, 19%);
+    --color-secondary: hsl(358, 78%, 69%);
+    --color-secondary-intense: hsl(358, 100%, 41%);
+    --color-font: hsla(0, 0%, 100%, 0.902);
+    --color-shadow: hsl(0, 0%, 0%);
+    --background-opacity: rgba(0, 0, 0, 0.6);
+    --circle-opacity: hsla(358, 78%, 69%, 0.4); /* Más transparente */
+    --circle-inner-opacity: rgba(235, 35%, 19%, 0.5); /* Más transparente */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    background-image: url(images/paulo\ y\ duki.jpg);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    font-size: 1.6rem;
+    font-family: 'Orbitron', sans-serif;
+}
+p, i, h1{
+    color: var(--color-font);
+}
+h1{
+    font-size: 3.2rem;
+}
+i{
+    font-size: 3.2rem;
+}
+section {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: var(--background-opacity);
+}
+.container{
+    width: min(42.5rem, 100%);
+    margin-inline: auto;
+    padding-inline: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.painel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    width: 20rem;
+    margin-block: 5rem;
+    padding: 1rem;
+    border-radius: 10rem;
+    box-shadow: 0px 0px 5px 10px var(--color-shadow);
+    -webkit-box-shadow: 0px 0px 5px 10px var(--color-shadow);
+    -moz-box-shadow: 0px 0px 5px 10px var(--color-shadow);
+    background-color: var(--background-opacity);
+}
+.painel p{
+    opacity: .8;
+    transition: 1s ease-in;
+}
+.painel p.active{
+    opacity: 1;
+    color: var(--color-secondary-intense);
+}
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 10px var(--color-shadow);
+    -webkit-box-shadow: 0px 0px 5px 10px var(--color-shadow);
+    -moz-box-shadow: 0px 0px 5px 10px var(--color-shadow);
+    background-color: var(--background-opacity);
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26rem;
+    height: 26rem;
+    border-radius: 50%;
+    background-color: var(--circle-opacity); /* Más transparente */
+    position: relative;
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    background-color: var(--circle-inner-opacity); /* Más transparente */
+}
+.time{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: var(--color-secondary-intense); /* Texto destacado */
+}
+.time p{
+    font-size: 5.6rem;
+}
+.time p:nth-of-type(2){
+    position: relative;
+    top: -.5rem;
+    margin-inline: 1rem;
+}
+.controls{
+    margin-top: 3rem;
+}
+.controls button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.controls #reset {
+    display: none;
+}
